@@ -1,82 +1,81 @@
 ﻿LGA,Percent Target Met,AVG RT - Seconds,Total Number
-Alpine,0.511,1219,573
-Ararat,0.660,875,588
-Ballarat,0.897,618,"6,051"
-Banyule,0.914,594,"5,415"
-Bass Coast,0.682,842,"2,325"
-Baw Baw,0.695,842,"2,510"
-Bayside,0.898,630,"3,433"
-Benalla,0.638,903,821
-Boroondara,0.908,616,"5,076"
-Brimbank,0.897,613,"9,894"
-Buloke,0.381,1389,289
-Campaspe,0.670,824,"1,957"
-Cardinia,0.736,741,"4,486"
-Casey,0.879,630,"13,380"
-Central Goldfields,0.653,885,879
-Colac-Otway,0.657,904,947
-Corangamite,0.467,1102,709
-Darebin,0.920,583,"7,670"
-East Gippsland,0.648,914,"3,012"
-Frankston,0.913,585,"7,948"
-Gannawarra,0.505,1130,461
-Glen Eira,0.920,588,"5,185"
-Glenelg,0.755,783,942
-Golden Plains,0.346,1126,754
-Greater Bendigo,0.809,708,"6,382"
-Greater Dandenong,0.920,580,"8,368"
-Greater Geelong,0.848,663,"14,021"
-Greater Shepparton,0.856,640,"4,061"
-Hepburn,0.374,1108,787
-Hindmarsh,0.566,1209,272
-Hobsons Bay,0.881,634,"4,043"
-Horsham,0.850,633,"1,091"
-Hume,0.881,627,"12,211"
-Indigo,0.288,1261,542
-Kingston,0.915,594,"6,877"
-Knox,0.925,579,"6,357"
-Latrobe,0.809,675,"5,941"
-Loddon,0.311,1297,482
-Macedon Ranges,0.673,804,"1,985"
-Manningham,0.853,692,"4,246"
-Mansfield,0.459,1401,338
-Maribyrnong,0.905,589,"3,685"
-Maroondah,0.936,543,"5,128"
-Melbourne,0.918,533,"9,816"
-Melton,0.836,656,"7,113"
-Mildura,0.853,650,"3,176"
-Mitchell,0.668,825,"2,224"
-Moira,0.605,939,"1,717"
-Monash,0.891,644,"6,996"
-Moonee Valley (1),0.879,659,"5,293"
-Moorabool,0.716,773,"1,495"
-Moreland,0.906,611,"8,228"
-Mornington Peninsula,0.830,659,"8,676"
-Mount Alexander,0.524,1003,848
-Moyne,0.424,1068,571
-Murrindindi,0.389,1298,763
-Nillumbik,0.708,798,"2,068"
-Northern Grampians,0.681,871,624
-Port Phillip,0.908,575,"4,777"
-Pyrenees,0.475,1070,440
-Queenscliffe,0.565,911,161
-South Gippsland,0.479,1082,"1,493"
-Southern Grampians,0.626,957,709
-Stonnington,0.903,612,"3,836"
-Strathbogie,0.460,1061,694
-Surf Coast,0.614,917,"1,310"
-Swan Hill,0.748,772,"1,092"
-Towong,0.425,1379,285
+Alpine Shire,0.511,1219,573
+Ararat Rural City,0.660,875,588
+Ballarat City,0.897,618,"6,051"
+Banyule City,0.914,594,"5,415"
+Bass Coast Shire,0.682,842,"2,325"
+Baw Baw Shire,0.695,842,"2,510"
+Bayside City,0.898,630,"3,433"
+Benalla Rural City,0.638,903,821
+Boroondara City,0.908,616,"5,076"
+Brimbank City,0.897,613,"9,894"
+Buloke Shire,0.381,1389,289
+Campaspe Shire,0.670,824,"1,957"
+Cardinia Shire,0.736,741,"4,486"
+Casey City,0.879,630,"13,380"
+Central Goldfields Shire,0.653,885,879
+Colac-Otway Shire,0.657,904,947
+Corangamite Shire,0.467,1102,709
+Darebin City,0.920,583,"7,670"
+East Gippsland Shire,0.648,914,"3,012"
+Frankston City,0.913,585,"7,948"
+Gannawarra Shire,0.505,1130,461
+Glen Eira City,0.920,588,"5,185"
+Glenelg Shire,0.755,783,942
+Golden Plains Shire,0.346,1126,754
+Greater Bendigo City,0.809,708,"6,382"
+Greater Dandenong City,0.920,580,"8,368"
+Greater Geelong City,0.848,663,"14,021"
+Greater Shepparton City,0.856,640,"4,061"
+Hepburn Shire,0.374,1108,787
+Hindmarsh Shire,0.566,1209,272
+Hobsons Bay City,0.881,634,"4,043"
+Horsham Rural City,0.850,633,"1,091"
+Hume City,0.881,627,"12,211"
+Indigo Shire,0.288,1261,542
+Kingston City,0.915,594,"6,877"
+Knox City,0.925,579,"6,357"
+Latrobe City,0.809,675,"5,941"
+Loddon Shire,0.311,1297,482
+Macedon Ranges Shire,0.673,804,"1,985"
+Manningham City,0.853,692,"4,246"
+Mansfield Shire,0.459,1401,338
+Maribyrnong City,0.905,589,"3,685"
+Maroondah City,0.936,543,"5,128"
+Melbourne City,0.918,533,"9,816"
+Melton City,0.836,656,"7,113"
+Mildura Rural City,0.853,650,"3,176"
+Mitchell Shire,0.668,825,"2,224"
+Moira Shire,0.605,939,"1,717"
+Monash City,0.891,644,"6,996"
+Moonee Valley City,0.879,659,"5,293"
+Moorabool Shire,0.716,773,"1,495"
+Moreland City,0.906,611,"8,228"
+Mornington Peninsula Shire,0.830,659,"8,676"
+Mount Alexander Shire,0.524,1003,848
+Moyne Shire,0.424,1068,571
+Murrindindi Shire,0.389,1298,763
+Nillumbik Shire,0.708,798,"2,068"
+Northern Grampians Shire,0.681,871,624
+Port Phillip City,0.908,575,"4,777"
+Pyrenees Shire,0.475,1070,440
+Queenscliffe Borough,0.565,911,161
+South Gippsland Shire,0.479,1082,"1,493"
+Southern Grampians Shire,0.626,957,709
+Stonnington City,0.903,612,"3,836"
+Strathbogie Shire,0.460,1061,694
+Surf Coast Shire,0.614,917,"1,310"
+Swan Hill Rural City,0.748,772,"1,092"
+Towong Shire,0.425,1379,285
 Unincorporated Vic,0.398,1725,88
-Wangaratta,0.764,761,"1,516"
-Warrnambool,0.925,569,"1,556"
-Wellington,0.601,974,"2,281"
-West Wimmera,0.373,1297,169
-Whitehorse,0.928,557,"6,235"
-Whittlesea,0.817,690,"9,416"
-Wodonga,0.875,634,"2,220"
-Wyndham,0.880,627,"8,515"
-Yarra,0.932,529,"4,611"
-Yarra Ranges,0.779,716,"6,722"
-Yarriambiack,0.398,1280,387
-Interstate LGAs,0.619,1019,977
+Wangaratta Rural City,0.764,761,"1,516"
+Warrnambool City,0.925,569,"1,556"
+Wellington Shire,0.601,974,"2,281"
+West Wimmera Shire,0.373,1297,169
+Whitehorse City,0.928,557,"6,235"
+Whittlesea City,0.817,690,"9,416"
+Wodonga City,0.875,634,"2,220"
+Wyndham City,0.880,627,"8,515"
+Yarra City,0.932,529,"4,611"
+Yarra Ranges Shire,0.779,716,"6,722"
+Yarriambiack Shire,0.398,1280,387
