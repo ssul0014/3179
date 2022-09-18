@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "title": "Victorian Ambulance Response Times 2019",
+    "projection": {"type": "equirectangular"},
+    "data": {
+          "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/vic_lga.topojson",
+          "format": {"type": "topojson", "feature": "vic_lga"}
+        },
+        "layer": [
+          {
+            "mark": {
+              "type": "geoshape",
+              "fill": "lightgrey",
+              "stroke": "black",
+              "strokeOpacity": 1
+            }
+          },
+          {
+            "transform": [
+          {
+            "lookup": "properties.LGA_NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/vic_response_time.csv"
+              },
+              "key": "LGA",
+              "fields": ["Response Time Performance"]
+            }
+          }
+        ],
+        "mark": {"type": "geoshape"},
+        "encoding": {
+          "color": {
+            "field": "Response Time Performance",
+            "type": "quantitative",
+            "scale": {"scheme": "greenblue"},
+            "title": "Benchmark Achieved (%)",
+            "legend": {
+              "orient": "bottom"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "properties.LGA_NAME", 
+              "type": "nominal", 
+              "title": "LGA"
+              },
+            { 
+              "field": "Response Time Performance",
+               "type": "quantitative", 
+               "title": "Benchmark Achieved (%)"
+               }
+          ]
+        }
+        }
+        ]
+  }
