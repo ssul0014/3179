@@ -3,12 +3,12 @@ body *{
 }
 
 body {
-    background-color: grey;
+    background-color: lightblue;
 }
 
 .page {
     width: 850px;
-    background-color: lightblue;
+    background-color: lightgrey;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
@@ -16,22 +16,4 @@ body {
 
 .vis-container {
     width: 100%;
-}
-
-#vis1 {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
-}
-
-#vis2 {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
 }
