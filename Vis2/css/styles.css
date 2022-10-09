@@ -1,3 +1,15 @@
+body {
+    background-color: green;
+}
+
+.page {
+    width: 850px;
+    background-color: red;
+    margin: auto;
+    padding: 50px;
+    padding-top: 35px;
+}
+
 #vis1 {
 	top:100px;
 	bottom: 100px; 
