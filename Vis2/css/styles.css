@@ -1,10 +1,14 @@
+body *{
+    font-family: 'Open Sans', sans-serif;
+}
+
 body {
-    background-color: green;
+    background-color: grey;
 }
 
 .page {
     width: 850px;
-    background-color: red;
+    background-color: lightblue;
     margin: auto;
     padding: 50px;
     padding-top: 35px;
