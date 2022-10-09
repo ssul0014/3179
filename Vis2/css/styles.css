@@ -1,4 +1,4 @@
-#choropleth_map {
+#vis1 {
 	top:100px;
 	bottom: 100px; 
 	left: 100px;
@@ -7,7 +7,7 @@
 	width: 800px;*/
 }
 
-#line_chart {
+#vis2 {
 	top:100px;
 	bottom: 100px; 
 	left: 100px;
