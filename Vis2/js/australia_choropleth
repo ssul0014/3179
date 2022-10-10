@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": "Percentage of Time Victorian Ambulance Response Targets are Met, by LGA, in 2019",
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2018,
+      "bind": {
+        "input": "range",
+        "min": 2012,
+        "max": 2021,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],
+  "projection": {"type": "equirectangular"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/STE_2021_AUST_GDA2020.topojson",
+        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgrey",
+        "stroke": "black",
+        "strokeOpacity": 1
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/ambulance_response.csv"
+      },
+      "transform": [
+        {
+          "lookup": "State",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/STE_2021_AUST_GDA2020.topojson",
+              "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+            },
+            "key": "properties.STE_NAME21"
+          },
+          "as": "geo"
+        },
+        {"filter": "datum.Year == Year_selection"}
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "shape": {"field": "geo", "type": "geojson"},
+        "color": {
+          "field": "Response_90",
+          "type": "quantitative",
+          "scale": {"scheme": "redpurple",
+          "domain": [10, 35]},
+          "title": "Reponse Time (min)",
+          "legend": {"orient": "right"}
+        },
+        "tooltip": [
+          {
+            "field": "properties.STE_NAME21",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "Response_90",
+            "type": "quantitative",
+            "title": "Response Time (min)"
+          },
+          {"field": "Year", "type": "quantitative"}
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
