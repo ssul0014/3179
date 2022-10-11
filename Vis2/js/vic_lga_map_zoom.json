@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 450,
+  "title": "Percentage of Time Victorian Ambulance Response Targets are Met, by LGA, in 2019",
+  "params": [
+    {
+      "name": "zoom_level",
+      "value": 4800,
+      "bind": {
+        "input": "range",
+        "min": 4800,
+        "max": 40000,
+        "step": 100,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [145.75, -36.55],
+      "bind": {
+        "input": "select",
+        "options": [
+          [145, -37.95],
+          [144.3, -38.1],
+          [144.9, -36.7],
+          [147.1, -38.1],
+          [145.75, -36.55]
+        ],
+        "labels": ["Melbourne CBD", "Geelong", "Bendigo", "Sale", "Recentre"],
+        "name": "Map Centre: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "equirectangular",
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/vic_lga.topojson",
+    "format": {"type": "topojson", "feature": "vic_lga"}
+  },
+  "layer": [
+    {
+      "transform": [{"calculate": "'Data is not availaible'", "as": "note"}],
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgrey",
+        "stroke": "black",
+        "strokeOpacity": 1
+      },
+      "encoding": {"tooltip": {"field": "note"}}
+    },
+    {
+      "transform": [
+        {
+          "lookup": "properties.LGA_NAME",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/vic_response_time.csv"
+            },
+            "key": "LGA",
+            "fields": ["Response Time Performance"]
+          }
+        }
+      ],
+      "mark": {"type": "geoshape"},
+      "encoding": {
+        "color": {
+          "field": "Response Time Performance",
+          "type": "quantitative",
+          "scale": {"scheme": "greenblue"},
+          "title": "Benchmark Achieved (%)",
+          "legend": {"orient": "bottom"}
+        },
+        "tooltip": [
+          {"field": "properties.LGA_NAME", "type": "nominal", "title": "LGA"},
+          {
+            "field": "Response Time Performance",
+            "type": "quantitative",
+            "title": "Benchmark Achieved (%)"
+          }
+        ]
+      }
+    }
+  ]
+}
