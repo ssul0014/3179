@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 450,
+  "height": 300,
   "view": {"stroke": "transparent"},
   "title": "Percentage of Time Victorian Ambulance Response Targets are Met, by LGA, in 2019",
   "params": [
@@ -73,7 +73,7 @@
           "type": "quantitative",
           "scale": {"scheme": "greenblue"},
           "title": "Benchmark Achieved (%)",
-          "legend": {"orient": "bottom"}
+          "legend": {"orient": "top-right"}
         },
         "tooltip": [
           {"field": "properties.LGA_NAME", "type": "nominal", "title": "LGA"},
