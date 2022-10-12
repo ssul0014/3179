@@ -31,7 +31,7 @@
         "color": {"field": "State", "type": "nominal"},
         "opacity": {
           "condition": {"param": "state_highlight", "value": 1},
-          "value": 0.1,
+          "value": 0.1
         },
         "tooltip": [
           {"field": "State", "type": "nominal"},
