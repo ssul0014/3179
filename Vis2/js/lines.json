@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 400,
+  "title": "State Ambulance Expenditure, 2012-2021",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/amb_exp_time.csv"
+  },
+  "layer": [
+    {
+      "transform": [
+        {"calculate": "'$' + toString(datum.Per_person_total)", "as": "Spend"}
+      ],
+      "params": [
+        {
+          "name": "state_highlight",
+          "select": {"type": "point", "fields": ["State"]},
+          "bind": "legend"
+        }
+      ],
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "x": {"field": "Year"},
+        "y": {
+          "field": "Per_person_total",
+          "type": "quantitative",
+          "title": "Spending Per Person ($)"
+        },
+        "color": {"field": "State", "type": "nominal"},
+        "opacity": {
+          "condition": {"param": "state_highlight", "value": 1},
+          "value": 0.1
+        },
+        "tooltip": [
+          {"field": "State", "type": "nominal"},
+          {"field": "Year", "type": "ordinal"},
+          {
+            "field": "Spend",
+            "type": "nominal",
+            "title": "Expenditure ($ per person)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"filter": "datum.State == 'TAS'"},
+        {
+          "calculate": "'In the four years from 2017 Tasmania lb increased per person expenditure by 68%.'",
+          "as": "text_annotation"
+        }
+      ],
+      "mark": {"type": "text", "dx": 80, "dy": -170},
+      "encoding": {
+        "text": {"field": "text_annotation"},
+        "color": {"value": "grey"},
+        "opacity": {
+          "condition": {"param": "state_highlight", "value": 1},
+          "value": 0
+        }
+      }
+    }
+  ],
+  "config": {"lineBreak": "lb"}
+}
