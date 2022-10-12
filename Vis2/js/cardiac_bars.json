@@ -1,0 +1,139 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "hconcat": [
+    {
+      "width": "container",
+      "height": 400,
+      "title": "Paramedic Witnessed Cardiac Arrest Survival Rates (2021)",
+      "data": {
+        "values": [
+          {"State": "NSW", "Value": 43.6},
+          {"State": "VIC", "Value": 58.3},
+          {"State": "QLD", "Value": 58.2},
+          {"State": "WA", "Value": 37.1},
+          {"State": "SA", "Value": 41.9},
+          {"State": "TAS", "Value": 54.8},
+          {"State": "ACT", "Value": 55.6},
+          {"State": "NT", "Value": 70.0}
+        ]
+      },
+      "layer": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "color": {"value": "#3498db"},
+            "x": {"field": "State", "type": "nominal"},
+            "y": {
+              "field": "Value",
+              "type": "quantitative",
+              "scale": {"domain": [0, 70]},
+              "axis": {"tickCount": 7}
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "transform": [
+            {"filter": "datum.Value >= 49.8"},
+            {"calculate": "49.8", "as": "baseline"}
+          ],
+          "encoding": {
+            "x": {"field": "State", "type": "nominal"},
+            "y": {
+              "field": "baseline",
+              "type": "quantitative",
+              "title": "Survival Rate (%)"
+            },
+            "y2": {"field": "Value"},
+            "color": {"value": "#2e86c1"}
+          }
+        },
+        {
+          "data": {"values": [{}]},
+          "encoding": {"y": {"datum": 49.8}},
+          "layer": [
+            {"mark": "rule"},
+            {
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "dx": -2,
+                "dy": -2,
+                "x": "width",
+                "text": "Australian Average"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "width": "container",
+      "height": 400,
+      "title": "Non-Paramedic Witnessed Cardiac Arrest Survival Rates (2021)",
+      "data": {
+        "values": [
+          {"State": "NSW", "Value": 21.2},
+          {"State": "VIC", "Value": 26.6},
+          {"State": "QLD", "Value": 26.2},
+          {"State": "WA", "Value": 19},
+          {"State": "SA", "Value": 21.3},
+          {"State": "TAS", "Value": 14.9},
+          {"State": "ACT", "Value": 35.8},
+          {"State": "NT", "Value": 14.9}
+        ]
+      },
+      "layer": [
+        {
+          "mark": "bar",
+          "encoding": {
+            "color": {"value": "#1abc9c"},
+            "x": {"field": "State", "type": "nominal"},
+            "y": {
+              "field": "Value",
+              "type": "quantitative",
+              "scale": {"domain": [0, 70]},
+              "axis": {"tickCount": 7}
+            }
+          }
+        },
+        {
+          "mark": "bar",
+          "transform": [
+            {"filter": "datum.Value >= 23.3"},
+            {"calculate": "23.3", "as": "baseline"}
+          ],
+          "encoding": {
+            "x": {"field": "State", "type": "nominal"},
+            "y": {
+              "field": "baseline",
+              "type": "quantitative",
+              "title": "Survival Rate (%)"
+            },
+            "y2": {"field": "Value"},
+            "color": {"value": "#17a589"}
+          }
+        },
+        {
+          "data": {"values": [{}]},
+          "encoding": {"y": {"datum": 23.3}},
+          "layer": [
+            {"mark": "rule"},
+            {
+              "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "bottom",
+                "dx": -2,
+                "dy": -2,
+                "x": "width",
+                "text": "Australian Average"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
