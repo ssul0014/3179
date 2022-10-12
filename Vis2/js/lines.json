@@ -26,7 +26,7 @@
           "field": "Per_person_total",
           "type": "quantitative",
           "title": "Spending Per Person ($)",
-          "axis": {"grid": false},
+          "axis": {"grid": false}
         },
         "color": {"field": "State", "type": "nominal"},
         "opacity": {
