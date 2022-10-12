@@ -3,7 +3,7 @@
   "width": "container",
   "height": 450,
   "view": {"stroke": "transparent"},
-  "title": "Percentage of Time Victorian Ambulance Response Targets are Met, by LGA, in 2019",
+  "title": "Ambulance Response Time",
   "params": [
     {
       "name": "Year_selection",
