@@ -1,0 +1,124 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Ambulance Response Time",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/ambulance_response.csv"
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "value": 2018,
+      "bind": {
+        "input": "range",
+        "min": 2012,
+        "max": 2021,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ],  
+  "hconcat": [
+    {
+      "width": "container",
+      "height": 450,
+      "projection": {
+        "type": "equirectangular"
+      },
+      "layer": [
+        {
+          "data": {
+            "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/STE_2021_AUST_GDA2020.topojson",
+            "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+          },
+          "mark": {
+            "type": "geoshape",
+            "fill": "lightgrey",
+            "stroke": "black",
+            "strokeOpacity": 1
+          }
+        },
+        {
+          "params": [
+            {
+              "name": "loc_select",
+              "select": {"type": "point", "encodings": ["description"]}
+            }
+            
+          ],
+          "transform": [
+            {
+              "lookup": "State",
+              "from": {
+                "data": {
+                  "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/STE_2021_AUST_GDA2020.topojson",
+                  "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+                },
+                "key": "properties.STE_NAME21"
+              },
+              "as": "geo"
+            },
+            {
+              "filter": "datum.Year == Year_selection"
+            }
+          ],
+          "mark": {
+            "type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5
+          },
+          "encoding": {
+            "shape": {"field": "geo", "type": "geojson"},
+            "description": {"field": "State"},
+            "fill": {
+              "field": "Response_90",
+              "type": "quantitative",
+              "title": "Response Time (min)",
+              "legend": {"orient": "left", "padding": 20},
+              "scale": {
+                "domain": [10, 35],
+                "scheme": "bluepurple"
+              }
+            },
+            "tooltip": [
+              {"field": "State"},
+              {"field": "Response_90", "type": "quantitative", "title": "Response Time (min)"},
+              {"field": "Year"}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "width": "container",
+      "height": 200,
+      "layer": [
+        {
+          "mark": "line",
+          "transform": [
+            {"filter": {"param": "loc_select"}}
+          ],
+          "encoding": {
+            "x": {"field": "Year", "type": "ordinal", "axis": {"grid": false}},
+            "y": {"aggregate": "average", "field": "Response_90", "type": "quantitative", "title": "Response Time (min)"}
+          }
+        },
+        {
+          "mark": {
+              "type": "text",
+              "align": "right",
+              "baseline": "bottom",
+              "x": "width",
+              "y": 0
+          },
+          "encoding": {
+            "text": {
+              "condition": {
+                "test": "!isDefined(loc_select.State)",
+                "value": "All States"
+              },
+              "value": {"expr": "loc_select.State"}
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
