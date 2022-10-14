@@ -86,7 +86,7 @@
         "color": {
           "field": "Response Time Performance",
           "type": "quantitative",
-          "scale": {"scheme": "greenblue"},
+          "scale": {"scheme": "lighttealblue"},
           "title": "Target Achieved (%)",
           "legend": {"orient": "top-right"}
         },
