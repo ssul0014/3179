@@ -3,7 +3,21 @@
   "width": "container",
   "height": 300,
   "view": {"stroke": "transparent"},
-  "title": "Percentage of Time Victorian Ambulance Response Targets are Met, by LGA, in 2019",
+  "config": {
+    "legend": {
+      "labelFont": "roboto",
+      "titleFont": "roboto",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "axis": {
+      "labelFont": "roboto",
+      "titleFont": "roboto",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "mark": {"font": "roboto"}
+  },
   "params": [
     {
       "name": "zoom_level",
@@ -48,7 +62,8 @@
       "mark": {
         "type": "geoshape",
         "fill": "lightgrey",
-        "stroke": "black",
+        "stroke": "white",
+        "strokeWidth": 0.5,
         "strokeOpacity": 1
       },
       "encoding": {"tooltip": {"field": "note"}}
@@ -72,7 +87,7 @@
           "field": "Response Time Performance",
           "type": "quantitative",
           "scale": {"scheme": "greenblue"},
-          "title": "Benchmark Achieved (%)",
+          "title": "Target Achieved (%)",
           "legend": {"orient": "top-right"}
         },
         "tooltip": [
