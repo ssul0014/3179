@@ -16,14 +16,50 @@
         "name": "Year: "
       }
     }
-  ],  
-  "hconcat": [
+  ],
+  "vconcat": [
+    {
+      "width": "container",
+      "height": 100,
+      "layer": [
+        {
+          "mark": "line",
+          "transform": [{"filter": {"param": "loc_select"}}],
+          "encoding": {
+            "x": {"field": "Year", "type": "ordinal", "axis": {"grid": false}},
+            "y": {
+              "aggregate": "average",
+              "field": "Response_90",
+              "type": "quantitative",
+              "title": "Response Time (min)",
+              "scale": {"domain": [10, 35]}
+            }
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "x": "width",
+            "y": 0
+          },
+          "encoding": {
+            "text": {
+              "condition": {
+                "test": "!isDefined(loc_select.State)",
+                "value": "All States"
+              },
+              "value": {"expr": "loc_select.State"}
+            }
+          }
+        }
+      ]
+    },
     {
       "width": "container",
       "height": 450,
-      "projection": {
-        "type": "equirectangular"
-      },
+      "projection": {"type": "equirectangular"},
       "layer": [
         {
           "data": {
@@ -43,7 +79,6 @@
               "name": "loc_select",
               "select": {"type": "point", "encodings": ["description"]}
             }
-            
           ],
           "transform": [
             {
@@ -51,19 +86,18 @@
               "from": {
                 "data": {
                   "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/STE_2021_AUST_GDA2020.topojson",
-                  "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+                  "format": {
+                    "type": "topojson",
+                    "feature": "STE_2021_AUST_GDA2020"
+                  }
                 },
                 "key": "properties.STE_NAME21"
               },
               "as": "geo"
             },
-            {
-              "filter": "datum.Year == Year_selection"
-            }
+            {"filter": "datum.Year == Year_selection"}
           ],
-          "mark": {
-            "type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5
-          },
+          "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5},
           "encoding": {
             "shape": {"field": "geo", "type": "geojson"},
             "description": {"field": "State"},
@@ -72,54 +106,20 @@
               "type": "quantitative",
               "title": "Response Time (min)",
               "legend": {"orient": "bottom"},
-              "scale": {
-                "domain": [10, 35],
-                "scheme": "bluepurple"
-              }
+              "scale": {"domain": [10, 35], "scheme": "bluepurple"}
             },
             "tooltip": [
               {"field": "State"},
-              {"field": "Response_90", "type": "quantitative", "title": "Response Time (min)"},
+              {
+                "field": "Response_90",
+                "type": "quantitative",
+                "title": "Response Time (min)"
+              },
               {"field": "Year"}
             ]
           }
         }
       ]
-    },
-    {
-      "width": "container",
-      "height": 200,
-      "layer": [
-        {
-          "mark": "line",
-          "transform": [
-            {"filter": {"param": "loc_select"}}
-          ],
-          "encoding": {
-            "x": {"field": "Year", "type": "ordinal", "axis": {"grid": false}},
-            "y": {"aggregate": "average", "field": "Response_90", "type": "quantitative", "title": "Response Time (min)"}
-          }
-        },
-        {
-          "mark": {
-              "type": "text",
-              "align": "right",
-              "baseline": "bottom",
-              "x": "width",
-              "y": 0
-          },
-          "encoding": {
-            "text": {
-              "condition": {
-                "test": "!isDefined(loc_select.State)",
-                "value": "All States"
-              },
-              "value": {"expr": "loc_select.State"}
-            }
-          }
-        }
-      ]
     }
-  ],
-  "config": {}
+  ]
 }
