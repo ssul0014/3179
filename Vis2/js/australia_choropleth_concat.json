@@ -71,7 +71,7 @@
               "field": "Response_90",
               "type": "quantitative",
               "title": "Response Time (min)",
-              "legend": {"orient": "left"},
+              "legend": {"orient": "bottom"},
               "scale": {
                 "domain": [10, 35],
                 "scheme": "bluepurple"
@@ -120,5 +120,6 @@
         }
       ]
     }
-  ]
+  ],
+  "config": {}
 }
