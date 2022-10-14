@@ -1,8 +1,23 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Ambulance Response Time",
   "data": {
     "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/ambulance_response.csv"
+  },
+  "view": {"stroke": "transparent"},
+  "config": {
+    "legend": {
+      "labelFont": "roboto",
+      "titleFont": "roboto",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "axis": {
+      "labelFont": "roboto",
+      "titleFont": "roboto",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "mark": {"font": "roboto"}
   },
   "params": [
     {
@@ -21,6 +36,7 @@
     {
       "width": "container",
       "height": 100,
+      "view": {"stroke": "transparent"},
       "layer": [
         {
           "mark": "line",
@@ -32,8 +48,10 @@
               "field": "Response_90",
               "type": "quantitative",
               "title": "Response Time (min)",
-              "scale": {"domain": [10, 35]}
-            }
+              "scale": {"domain": [10, 35]},
+              "axis": {"grid": false}
+            },
+            "color": {"value": "teal"}
           }
         },
         {
@@ -106,7 +124,7 @@
               "type": "quantitative",
               "title": "Response Time (min)",
               "legend": {"orient": "bottom"},
-              "scale": {"domain": [10, 35], "scheme": "bluepurple"}
+              "scale": {"domain": [10, 35], "scheme": "lighttealblue"}
             },
             "tooltip": [
               {"field": "State"},
