@@ -3,8 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/ambulance_response.csv"
   },
-  "view": {"stroke": "transparent"},
-  "config": {
+    "config": {
     "legend": {
       "labelFont": "roboto",
       "titleFont": "roboto",
@@ -36,6 +35,7 @@
     {
       "width": "container",
       "height": 450,
+      "view": {"stroke": "transparent"},
       "projection": {"type": "equirectangular"},
       "layer": [
         {
@@ -122,6 +122,9 @@
         {
           "mark": {
             "type": "text",
+            "font": "roboto",
+            "fontWeight": "lighter",
+            "fontSize": 14,
             "align": "right",
             "baseline": "bottom",
             "x": "width",
