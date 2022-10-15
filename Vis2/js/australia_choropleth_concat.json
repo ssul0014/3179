@@ -35,47 +35,6 @@
   "vconcat": [
     {
       "width": "container",
-      "height": 100,
-      "view": {"stroke": "transparent"},
-      "layer": [
-        {
-          "mark": "line",
-          "transform": [{"filter": {"param": "loc_select"}}],
-          "encoding": {
-            "x": {"field": "Year", "type": "ordinal", "axis": {"grid": false}},
-            "y": {
-              "aggregate": "average",
-              "field": "Response_90",
-              "type": "quantitative",
-              "title": "Response Time (min)",
-              "scale": {"domain": [10, 35]},
-              "axis": {"grid": false}
-            },
-            "color": {"value": "teal"}
-          }
-        },
-        {
-          "mark": {
-            "type": "text",
-            "align": "right",
-            "baseline": "bottom",
-            "x": "width",
-            "y": 0
-          },
-          "encoding": {
-            "text": {
-              "condition": {
-                "test": "!isDefined(loc_select.State)",
-                "value": "All States"
-              },
-              "value": {"expr": "loc_select.State"}
-            }
-          }
-        }
-      ]
-    },
-    {
-      "width": "container",
       "height": 450,
       "projection": {"type": "equirectangular"},
       "layer": [
@@ -87,7 +46,7 @@
           "mark": {
             "type": "geoshape",
             "fill": "lightgrey",
-            "stroke": "black",
+            "stroke": "white",
             "strokeOpacity": 1
           }
         },
@@ -123,7 +82,7 @@
               "field": "Response_90",
               "type": "quantitative",
               "title": "Response Time (min)",
-              "legend": {"orient": "bottom"},
+              "legend": {"orient": "top-left"},
               "scale": {"domain": [10, 35], "scheme": "lighttealblue"}
             },
             "tooltip": [
@@ -135,6 +94,47 @@
               },
               {"field": "Year"}
             ]
+          }
+        }
+      ]
+    },
+    {
+      "width": "container",
+      "height": 100,
+      "view": {"stroke": "transparent"},
+      "layer": [
+        {
+          "mark": "line",
+          "transform": [{"filter": {"param": "loc_select"}}],
+          "encoding": {
+            "x": {"field": "Year", "type": "ordinal", "axis": {"grid": false}},
+            "y": {
+              "aggregate": "average",
+              "field": "Response_90",
+              "type": "quantitative",
+              "title": "Response Time (min)",
+              "scale": {"domain": [10, 35]},
+              "axis": {"grid": false}
+            },
+            "color": {"value": "teal"}
+          }
+        },
+        {
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "x": "width",
+            "y": 0
+          },
+          "encoding": {
+            "text": {
+              "condition": {
+                "test": "!isDefined(loc_select.State)",
+                "value": "All States"
+              },
+              "value": {"expr": "loc_select.State"}
+            }
           }
         }
       ]
