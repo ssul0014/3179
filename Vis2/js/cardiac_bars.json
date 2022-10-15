@@ -1,10 +1,19 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "config": {
+    "axis": {
+      "labelFont": "roboto",
+      "titleFont": "roboto",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "mark": {"font": "roboto"}
+  },
   "hconcat": [
     {
       "width": "container",
-      "height": 400,
-      "title": "Paramedic Witnessed Cardiac Arrest Survival Rates (2021)",
+      "height": 200,
+      "title": "Paramedic Witnessed",
       "data": {
         "values": [
           {"State": "NSW", "Value": 43.6},
@@ -14,21 +23,29 @@
           {"State": "SA", "Value": 41.9},
           {"State": "TAS", "Value": 54.8},
           {"State": "ACT", "Value": 55.6},
-          {"State": "NT", "Value": 70.0}
+          {"State": "NT", "Value": 70}
         ]
       },
       "layer": [
         {
           "mark": "bar",
           "encoding": {
-            "color": {"value": "#3498db"},
+            "color": {"value": "#d5a3ca"},
             "x": {"field": "State", "type": "nominal"},
             "y": {
               "field": "Value",
               "type": "quantitative",
               "scale": {"domain": [0, 70]},
               "axis": {"tickCount": 7}
-            }
+            },
+            "tooltip": [
+              {"field": "State", "type": "nominal"},
+              {
+                "field": "Value",
+                "type": "nominal",
+                "title": "Survival Rate (%)"
+              }
+            ]
           }
         },
         {
@@ -45,7 +62,15 @@
               "title": "Survival Rate (%)"
             },
             "y2": {"field": "Value"},
-            "color": {"value": "#2e86c1"}
+            "color": {"value": "#c581b6"},
+            "tooltip": [
+              {"field": "State", "type": "nominal"},
+              {
+                "field": "Value",
+                "type": "nominal",
+                "title": "Survival Rate (%)"
+              }
+            ]
           }
         },
         {
@@ -59,9 +84,11 @@
                 "align": "right",
                 "baseline": "bottom",
                 "dx": -2,
-                "dy": -2,
+                "dy": -3,
                 "x": "width",
-                "text": "Australian Average"
+                "text": "Australian Average",
+                "font": "roboto",
+                "fontSize": 12
               }
             }
           ]
@@ -70,8 +97,8 @@
     },
     {
       "width": "container",
-      "height": 400,
-      "title": "Non-Paramedic Witnessed Cardiac Arrest Survival Rates (2021)",
+      "height": 200,
+      "title": "Non-Paramedic Witnessed",
       "data": {
         "values": [
           {"State": "NSW", "Value": 21.2},
@@ -88,14 +115,22 @@
         {
           "mark": "bar",
           "encoding": {
-            "color": {"value": "#1abc9c"},
+            "color": {"value": "#d5a3ca"},
             "x": {"field": "State", "type": "nominal"},
             "y": {
               "field": "Value",
               "type": "quantitative",
               "scale": {"domain": [0, 70]},
               "axis": {"tickCount": 7}
-            }
+            },
+            "tooltip": [
+              {"field": "State", "type": "nominal"},
+              {
+                "field": "Value",
+                "type": "nominal",
+                "title": "Survival Rate (%)"
+              }
+            ]
           }
         },
         {
@@ -112,7 +147,15 @@
               "title": "Survival Rate (%)"
             },
             "y2": {"field": "Value"},
-            "color": {"value": "#17a589"}
+            "color": {"value": "#c581b6"},
+            "tooltip": [
+              {"field": "State", "type": "nominal"},
+              {
+                "field": "Value",
+                "type": "nominal",
+                "title": "Survival Rate (%)"
+              }
+            ]
           }
         },
         {
@@ -126,9 +169,11 @@
                 "align": "right",
                 "baseline": "bottom",
                 "dx": -2,
-                "dy": -2,
+                "dy": -3,
                 "x": "width",
-                "text": "Australian Average"
+                "text": "Australian Average",
+                "font": "roboto",
+                "fontSize": 12
               }
             }
           ]
