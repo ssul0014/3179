@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 400,
+  "height": 300,
   "view": {"stroke": "transparent"},
   "config": {
     "legend": {
@@ -89,7 +89,7 @@
         "fontWeight": "lighter",
         "fontSize": 12,
         "dx": 50,
-        "dy": -170
+        "dy": -140
       },
       "encoding": {
         "text": {"field": "text_annotation"},
