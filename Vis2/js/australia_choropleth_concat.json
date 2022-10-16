@@ -16,9 +16,7 @@
       "labelFontSize": 12,
       "titleFontSize": 12
     },
-    "mark": {
-      "font": "roboto"
-    }
+    "mark": {"font": "roboto"}
   },
   "params": [
     {
@@ -37,20 +35,13 @@
     {
       "width": "container",
       "height": 450,
-      "view": {
-        "stroke": "transparent"
-      },
-      "projection": {
-        "type": "equirectangular"
-      },
+      "view": {"stroke": "transparent"},
+      "projection": {"type": "equirectangular"},
       "layer": [
         {
           "data": {
             "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/STE_2021_AUST_GDA2020.topojson",
-            "format": {
-              "type": "topojson",
-              "feature": "STE_2021_AUST_GDA2020"
-            }
+            "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
           },
           "mark": {
             "type": "geoshape",
@@ -63,12 +54,7 @@
           "params": [
             {
               "name": "loc_select",
-              "select": {
-                "type": "point",
-                "encodings": [
-                  "description"
-                ]
-              }
+              "select": {"type": "point", "encodings": ["description"]}
             }
           ],
           "transform": [
@@ -86,50 +72,27 @@
               },
               "as": "geo"
             },
-            {
-              "filter": "datum.Year == Year_selection"
-            }
+            {"filter": "datum.Year == Year_selection"}
           ],
-          "mark": {
-            "type": "geoshape",
-            "stroke": "#fff",
-            "strokeWidth": 0.5
-          },
+          "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5},
           "encoding": {
-            "shape": {
-              "field": "geo",
-              "type": "geojson"
-            },
-            "description": {
-              "field": "State"
-            },
+            "shape": {"field": "geo", "type": "geojson"},
+            "description": {"field": "State"},
             "fill": {
               "field": "Response_90",
               "type": "quantitative",
               "title": "Response Time (min)",
-              "legend": {
-                "orient": "top-left"
-              },
-              "scale": {
-                "domain": [
-                  10,
-                  35
-                ],
-                "scheme": "lighttealblue"
-              }
+              "legend": {"orient": "top-left"},
+              "scale": {"domain": [10, 35], "scheme": "lighttealblue"}
             },
             "tooltip": [
-              {
-                "field": "State"
-              },
+              {"field": "State"},
               {
                 "field": "Response_90",
                 "type": "quantitative",
                 "title": "Response Time (min)"
               },
-              {
-                "field": "Year"
-              }
+              {"field": "Year"}
             ]
           }
         }
@@ -138,48 +101,22 @@
     {
       "width": "container",
       "height": 100,
-      "view": {
-        "stroke": "transparent"
-      },
+      "view": {"stroke": "transparent"},
       "layer": [
         {
-          "mark": {
-            "type": "line",
-            "point": true
-          },
-          "transform": [
-            {
-              "filter": {
-                "param": "loc_select"
-              }
-            }
-          ],
+          "mark": {"type": "line", "point": true},
+          "transform": [{"filter": {"param": "loc_select"}}],
           "encoding": {
-            "x": {
-              "field": "Year",
-              "type": "ordinal",
-              "axis": {
-                "grid": false
-              }
-            },
+            "x": {"field": "Year", "type": "ordinal", "axis": {"grid": false}},
             "y": {
               "aggregate": "average",
               "field": "Response_90",
               "type": "quantitative",
               "title": "Response Time (min)",
-              "scale": {
-                "domain": [
-                  10,
-                  35
-                ]
-              },
-              "axis": {
-                "grid": false
-              }
+              "scale": {"domain": [10, 35]},
+              "axis": {"grid": false}
             },
-            "color": {
-              "value": "teal"
-            },
+            "color": {"value": "teal"},
             "tooltip": [
               {
                 "aggregate": "average",
@@ -187,9 +124,7 @@
                 "format": ".1f",
                 "title": "Response Time (min)"
               },
-              {
-                "field": "Year"
-              }
+              {"field": "Year"}
             ]
           }
         },
@@ -212,9 +147,7 @@
                 "test": "!isDefined(loc_select.State)",
                 "value": "All States"
               },
-              "value": {
-                "expr": "loc_select.State"
-              }
+              "value": {"expr": "loc_select.State"}
             }
           }
         }
