@@ -8,7 +8,7 @@
       "titleFontSize": 12
     },
     "mark": {"font": "roboto"},
-    "concat": {"spacing": 100}
+    "concat": {"spacing": 200}
   },
   "hconcat": [
     {
