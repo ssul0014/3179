@@ -7,12 +7,8 @@
       "labelFontSize": 12,
       "titleFontSize": 12
     },
-    "mark": {
-      "font": "roboto"
-    },
-    "concat": {
-      "spacing": 200
-    }
+    "mark": {"font": "roboto"},
+    "concat": {"spacing": 100}
   },
   "hconcat": [
     {
@@ -21,69 +17,30 @@
       "title": "Paramedic Witnessed (2021)",
       "data": {
         "values": [
-          {
-            "State": "NSW",
-            "Value": 43.6
-          },
-          {
-            "State": "VIC",
-            "Value": 58.3
-          },
-          {
-            "State": "QLD",
-            "Value": 58.2
-          },
-          {
-            "State": "WA",
-            "Value": 37.1
-          },
-          {
-            "State": "SA",
-            "Value": 41.9
-          },
-          {
-            "State": "TAS",
-            "Value": 54.8
-          },
-          {
-            "State": "ACT",
-            "Value": 55.6
-          },
-          {
-            "State": "NT",
-            "Value": 70
-          }
+          {"State": "NSW", "Value": 43.6},
+          {"State": "VIC", "Value": 58.3},
+          {"State": "QLD", "Value": 58.2},
+          {"State": "WA", "Value": 37.1},
+          {"State": "SA", "Value": 41.9},
+          {"State": "TAS", "Value": 54.8},
+          {"State": "ACT", "Value": 55.6},
+          {"State": "NT", "Value": 70}
         ]
       },
       "layer": [
         {
           "mark": "bar",
           "encoding": {
-            "color": {
-              "value": "#9dd2d8"
-            },
-            "x": {
-              "field": "State",
-              "type": "nominal"
-            },
+            "color": {"value": "#9dd2d8"},
+            "x": {"field": "State", "type": "nominal"},
             "y": {
               "field": "Value",
               "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  70
-                ]
-              },
-              "axis": {
-                "tickCount": 7
-              }
+              "scale": {"domain": [0, 70]},
+              "axis": {"tickCount": 7}
             },
             "tooltip": [
-              {
-                "field": "State",
-                "type": "nominal"
-              },
+              {"field": "State", "type": "nominal"},
               {
                 "field": "Value",
                 "type": "nominal",
@@ -95,35 +52,20 @@
         {
           "mark": "bar",
           "transform": [
-            {
-              "filter": "datum.Value >= 49.8"
-            },
-            {
-              "calculate": "49.8",
-              "as": "baseline"
-            }
+            {"filter": "datum.Value >= 49.8"},
+            {"calculate": "49.8", "as": "baseline"}
           ],
           "encoding": {
-            "x": {
-              "field": "State",
-              "type": "nominal"
-            },
+            "x": {"field": "State", "type": "nominal"},
             "y": {
               "field": "baseline",
               "type": "quantitative",
               "title": "Survival Rate (%)"
             },
-            "y2": {
-              "field": "Value"
-            },
-            "color": {
-              "value": "#8ebdc2"
-            },
+            "y2": {"field": "Value"},
+            "color": {"value": "#8ebdc2"},
             "tooltip": [
-              {
-                "field": "State",
-                "type": "nominal"
-              },
+              {"field": "State", "type": "nominal"},
               {
                 "field": "Value",
                 "type": "nominal",
@@ -133,20 +75,10 @@
           }
         },
         {
-          "data": {
-            "values": [
-              {}
-            ]
-          },
-          "encoding": {
-            "y": {
-              "datum": 49.8
-            }
-          },
+          "data": {"values": [{}]},
+          "encoding": {"y": {"datum": 49.8}},
           "layer": [
-            {
-              "mark": "rule"
-            },
+            {"mark": "rule"},
             {
               "mark": {
                 "type": "text",
@@ -170,69 +102,30 @@
       "title": "Non-Paramedic Witnessed (2021)",
       "data": {
         "values": [
-          {
-            "State": "NSW",
-            "Value": 21.2
-          },
-          {
-            "State": "VIC",
-            "Value": 26.6
-          },
-          {
-            "State": "QLD",
-            "Value": 26.2
-          },
-          {
-            "State": "WA",
-            "Value": 19
-          },
-          {
-            "State": "SA",
-            "Value": 21.3
-          },
-          {
-            "State": "TAS",
-            "Value": 14.9
-          },
-          {
-            "State": "ACT",
-            "Value": 35.8
-          },
-          {
-            "State": "NT",
-            "Value": 14.9
-          }
+          {"State": "NSW", "Value": 21.2},
+          {"State": "VIC", "Value": 26.6},
+          {"State": "QLD", "Value": 26.2},
+          {"State": "WA", "Value": 19},
+          {"State": "SA", "Value": 21.3},
+          {"State": "TAS", "Value": 14.9},
+          {"State": "ACT", "Value": 35.8},
+          {"State": "NT", "Value": 14.9}
         ]
       },
       "layer": [
         {
           "mark": "bar",
           "encoding": {
-            "color": {
-              "value": "#9dd8c6"
-            },
-            "x": {
-              "field": "State",
-              "type": "nominal"
-            },
+            "color": {"value": "#9dd8c6"},
+            "x": {"field": "State", "type": "nominal"},
             "y": {
               "field": "Value",
               "type": "quantitative",
-              "scale": {
-                "domain": [
-                  0,
-                  70
-                ]
-              },
-              "axis": {
-                "tickCount": 7
-              }
+              "scale": {"domain": [0, 70]},
+              "axis": {"tickCount": 7}
             },
             "tooltip": [
-              {
-                "field": "State",
-                "type": "nominal"
-              },
+              {"field": "State", "type": "nominal"},
               {
                 "field": "Value",
                 "type": "nominal",
@@ -244,35 +137,20 @@
         {
           "mark": "bar",
           "transform": [
-            {
-              "filter": "datum.Value >= 23.3"
-            },
-            {
-              "calculate": "23.3",
-              "as": "baseline"
-            }
+            {"filter": "datum.Value >= 23.3"},
+            {"calculate": "23.3", "as": "baseline"}
           ],
           "encoding": {
-            "x": {
-              "field": "State",
-              "type": "nominal"
-            },
+            "x": {"field": "State", "type": "nominal"},
             "y": {
               "field": "baseline",
               "type": "quantitative",
               "title": "Survival Rate (%)"
             },
-            "y2": {
-              "field": "Value"
-            },
-            "color": {
-              "value": "#8fc4b3"
-            },
+            "y2": {"field": "Value"},
+            "color": {"value": "#8fc4b3"},
             "tooltip": [
-              {
-                "field": "State",
-                "type": "nominal"
-              },
+              {"field": "State", "type": "nominal"},
               {
                 "field": "Value",
                 "type": "nominal",
@@ -282,20 +160,10 @@
           }
         },
         {
-          "data": {
-            "values": [
-              {}
-            ]
-          },
-          "encoding": {
-            "y": {
-              "datum": 23.3
-            }
-          },
+          "data": {"values": [{}]},
+          "encoding": {"y": {"datum": 23.3}},
           "layer": [
-            {
-              "mark": "rule"
-            },
+            {"mark": "rule"},
             {
               "mark": {
                 "type": "text",
