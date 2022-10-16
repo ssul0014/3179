@@ -79,6 +79,10 @@
             "key": "LGA",
             "fields": ["Response Time Performance"]
           }
+        },
+        {
+          "calculate": "toString(datum['Response Time Performance'] + '%')",
+          "as": "Achieved"
         }
       ],
       "mark": {"type": "geoshape"},
@@ -92,11 +96,7 @@
         },
         "tooltip": [
           {"field": "properties.LGA_NAME", "type": "nominal", "title": "LGA"},
-          {
-            "field": "Response Time Performance",
-            "type": "quantitative",
-            "title": "Benchmark Achieved (%)"
-          }
+          {"field": "Achieved", "type": "nominal"}
         ]
       }
     }
