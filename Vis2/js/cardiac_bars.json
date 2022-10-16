@@ -30,6 +30,9 @@
       "layer": [
         {
           "mark": "bar",
+          "transform": [
+            {"calculate": "toString(datum.Value + '%')", "as": "Survival"}
+          ],
           "encoding": {
             "color": {"value": "#9dd2d8"},
             "x": {"field": "State", "type": "nominal"},
@@ -41,11 +44,7 @@
             },
             "tooltip": [
               {"field": "State", "type": "nominal"},
-              {
-                "field": "Value",
-                "type": "nominal",
-                "title": "Survival Rate (%)"
-              }
+              {"field": "Survival", "type": "nominal", "title": "Survival Rate"}
             ]
           }
         },
@@ -53,7 +52,8 @@
           "mark": "bar",
           "transform": [
             {"filter": "datum.Value >= 49.8"},
-            {"calculate": "49.8", "as": "baseline"}
+            {"calculate": "49.8", "as": "baseline"},
+            {"calculate": "toString(datum.Value + '%')", "as": "Survival"}
           ],
           "encoding": {
             "x": {"field": "State", "type": "nominal"},
@@ -66,11 +66,7 @@
             "color": {"value": "#8ebdc2"},
             "tooltip": [
               {"field": "State", "type": "nominal"},
-              {
-                "field": "Value",
-                "type": "nominal",
-                "title": "Survival Rate (%)"
-              }
+              {"field": "Survival", "type": "nominal", "title": "Survival Rate"}
             ]
           }
         },
@@ -115,6 +111,9 @@
       "layer": [
         {
           "mark": "bar",
+          "transform": [
+            {"calculate": "toString(datum.Value + '%')", "as": "Survival"}
+          ],
           "encoding": {
             "color": {"value": "#9dd8c6"},
             "x": {"field": "State", "type": "nominal"},
@@ -126,11 +125,7 @@
             },
             "tooltip": [
               {"field": "State", "type": "nominal"},
-              {
-                "field": "Value",
-                "type": "nominal",
-                "title": "Survival Rate (%)"
-              }
+              {"field": "Survival", "type": "nominal", "title": "Survival Rate"}
             ]
           }
         },
@@ -138,7 +133,8 @@
           "mark": "bar",
           "transform": [
             {"filter": "datum.Value >= 23.3"},
-            {"calculate": "23.3", "as": "baseline"}
+            {"calculate": "23.3", "as": "baseline"},
+            {"calculate": "toString(datum.Value + '%')", "as": "Survival"}
           ],
           "encoding": {
             "x": {"field": "State", "type": "nominal"},
@@ -151,11 +147,7 @@
             "color": {"value": "#8fc4b3"},
             "tooltip": [
               {"field": "State", "type": "nominal"},
-              {
-                "field": "Value",
-                "type": "nominal",
-                "title": "Survival Rate (%)"
-              }
+              {"field": "Survival", "type": "nominal", "title": "Survival Rate"}
             ]
           }
         },
