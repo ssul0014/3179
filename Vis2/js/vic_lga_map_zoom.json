@@ -2,7 +2,9 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
   "height": 300,
-  "view": {"stroke": "transparent"},
+  "view": {
+    "stroke": "transparent"
+  },
   "config": {
     "legend": {
       "labelFont": "roboto",
@@ -16,7 +18,9 @@
       "labelFontSize": 12,
       "titleFontSize": 12
     },
-    "mark": {"font": "roboto"}
+    "mark": {
+      "font": "roboto"
+    }
   },
   "params": [
     {
@@ -32,33 +36,69 @@
     },
     {
       "name": "center_to",
-      "value": [145.75, -36.55],
+      "value": [
+        145.75,
+        -36.55
+      ],
       "bind": {
         "input": "select",
         "options": [
-          [145, -37.95],
-          [144.3, -38.1],
-          [144.9, -36.7],
-          [147.1, -38.1],
-          [145.75, -36.55]
+          [
+            145,
+            -37.95
+          ],
+          [
+            144.3,
+            -38.1
+          ],
+          [
+            144.9,
+            -36.7
+          ],
+          [
+            147.1,
+            -38.1
+          ],
+          [
+            145.75,
+            -36.55
+          ]
         ],
-        "labels": ["Melbourne CBD", "Geelong", "Bendigo", "Sale", "Recentre"],
+        "labels": [
+          "Melbourne CBD",
+          "Geelong",
+          "Bendigo",
+          "Sale",
+          "Recentre"
+        ],
         "name": "Map Centre: "
       }
     }
   ],
   "projection": {
     "type": "equirectangular",
-    "center": {"expr": "center_to"},
-    "scale": {"expr": "zoom_level"}
+    "center": {
+      "expr": "center_to"
+    },
+    "scale": {
+      "expr": "zoom_level"
+    }
   },
   "data": {
     "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/js/vic_lga.topojson",
-    "format": {"type": "topojson", "feature": "vic_lga"}
+    "format": {
+      "type": "topojson",
+      "feature": "vic_lga"
+    }
   },
   "layer": [
     {
-      "transform": [{"calculate": "'Data is not availaible'", "as": "note"}],
+      "transform": [
+        {
+          "calculate": "'Data is not availaible'",
+          "as": "note"
+        }
+      ],
       "mark": {
         "type": "geoshape",
         "fill": "lightgrey",
@@ -66,7 +106,11 @@
         "strokeWidth": 0.5,
         "strokeOpacity": 1
       },
-      "encoding": {"tooltip": {"field": "note"}}
+      "encoding": {
+        "tooltip": {
+          "field": "note"
+        }
+      }
     },
     {
       "transform": [
@@ -77,21 +121,33 @@
               "url": "https://raw.githubusercontent.com/ssul0014/3179/main/Vis2/Data/vic_response_time.csv"
             },
             "key": "LGA",
-            "fields": ["Response Time Performance"]
+            "fields": [
+              "Response Time Performance"
+            ]
           }
         }
       ],
-      "mark": {"type": "geoshape"},
+      "mark": {
+        "type": "geoshape"
+      },
       "encoding": {
         "color": {
           "field": "Response Time Performance",
           "type": "quantitative",
-          "scale": {"scheme": "lighttealblue"},
+          "scale": {
+            "scheme": "lighttealblue"
+          },
           "title": "Target Achieved (%)",
-          "legend": {"orient": "top-right"}
+          "legend": {
+            "orient": "left"
+          }
         },
         "tooltip": [
-          {"field": "properties.LGA_NAME", "type": "nominal", "title": "LGA"},
+          {
+            "field": "properties.LGA_NAME",
+            "type": "nominal",
+            "title": "LGA"
+          },
           {
             "field": "Response Time Performance",
             "type": "quantitative",
