@@ -1,56 +1,160 @@
 <!DOCTYPE html>
 <html>
-<head>
-  
-  <title>Ambulance Response Targets and Expenditure</title>
-  
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
 
-  <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+<head>
+
+    <title>Australian Ambulance Services</title>
+
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+        integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
 
 </head>
+
 <body>
 
-  <div class="page">
-    
-    <h1>Ambulance Response Targets and Expenditure</h1>
-    
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div id="vis1" class="vis-container"></div>
-      </div>
-     </div>
-    
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-        <div id="vis2" class="vis-container"></div>
-      </div>
-     </div> 
-  </div>
-    
+    <div class="page">
 
-<script type="text/javascript">
+        <h1>AUSTRALIAN AMBULANCE SERVICES</h1>
 
-  var vg_1 = "js/vic_lga_map.json";
-  vegaEmbed('#vis1', vg_1).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-  var vg_2 = "js/line_expenditure.json";
-  vegaEmbed('#vis2', vg_2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-  
-</script>
+        <h2>Response Times by State and Territory</h2>
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-2-3">
+                <div id="vis3" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-3">
+                <div class="description description-right">
+                    <p>Response time is the time in minutes from when an emergency call is recieved until the
+                        paramedics arrive at the scene. <br><br> This map shows state-wide average response times. In
+                        the last ten years,
+                        the <b>lowest</b> average response time is <b>12.5 minutes</b> for the Australian Capital
+                        Territory (2015), while the <b>highest</b> is <b>33.4 minutes</b> in Tasmania (2021). <br><br>
+                        The Australian Capital Territory has the best response times in Australia, which may be because
+                        it is such a small geographical area. However, Western Australia is also a strong performer and
+                        it is the largest state. Tasmania has consistently performed the worst across the country.
+                        <br><br> Of interest is the effect of the <b>COVID pandemic</b>, which can be observed by
+                        increased
+                        response times across the board.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+
+        <h2>How does State Ambulance Service Spending Vary?</h2>
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-3">
+                <div class="description description-left">
+                    <p>Ambulance spending per person varies signficantly between states. <br><br> <b>Western
+                            Australia's</b> spending
+                        has remained relatively constant over the last ten years, as have its response times (which can
+                        be
+                        seen in the above map). <br><br> <b>Tasmania</b> started to increase ambulance spending in 2018
+                        after a 2017
+                        increase in response times. </p>
+                </div>
+            </div>
+            <div class="pure-u-2-3">
+                <div id="vis2" class="vis-container"></div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+
+        <h2>How Frequently are Ambulance Targets Met in Victorian LGAs?</h2>
+
+        <h3>Victorian Ambulance Response Target Rate 2019</h3>
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-2-3">
+                <div id="vis1" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-3">
+                <div class="description description-right">
+                    <p>Ambulance Victoria has a target of responding to <b>Code 1</b> incidents within <b>15 minutes</b>
+                        at least <b>90%</b> of the time in urban areas and 85% state wide. Code 1 incidents are those
+                        where
+                        patients require urgent paramedic assistance. <br><br> Inner metropolitan areas and areas near
+                        large
+                        cities are more likely to meet these targets. Rural areas often fall well below, for instance
+                        Loddon Shire only meets its target 31.1% of the time.</p>
+                </div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+
+        <h2>Cardiac Arrest Survival Rates</h2>
+
+        <div>
+            <div class="newspaper">
+                People suffering cardiac arrests that are witnessed by paramedics have a better survival
+                rate than those who are not not witnessed. <b>New South Wales</b>, <b>Northern Territory</b>
+                and <b>Western Australia</b> all have rates above the Australian average of <b>49.8%</b>.
+                <br> Where a cardiac arrest is not witness by a paramedic the average Australian survival
+                rate drops to <b>23.3%</b>. The <b>Australian Capital Territory</b>, <b>Queensland</b> and
+                <b>Victoria</b> all have survival rates above the average.
+            </div>
+        </div>
+
+
+
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis4" class="vis-container"></div>
+            </div>
+        </div>
+        <!-- end pure grid group -->
+
+    </div>
+
+
+
+    <div class="footer">
+        <p>Sarah Sullivan 2022 | FIT3179 - Data Visualisation 2</p>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+
+        var vg_1 = "js/vic_lga_map_zoom.json";
+        vegaEmbed('#vis1', vg_1, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vg_2 = "js/lines.json";
+        vegaEmbed('#vis2', vg_2, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vg_3 = "js/australia_choropleth_concat.json";
+        vegaEmbed('#vis3', vg_3, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        var vg_4 = "js/cardiac_bars.json";
+        vegaEmbed('#vis4', vg_4, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+    </script>
 
 </body>
+
 </html>
